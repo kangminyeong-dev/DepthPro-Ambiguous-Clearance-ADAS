@@ -1,4 +1,4 @@
-# DepthPro 기반 Ambiguous Clearance Detection ADAS ( 2025.09 ~ )
+# DepthPro 기반 Ambiguous Clearance Detection ADAS  ( 2025.09 ~ ing )
 (DepthPro-based Ambiguous Clearance Detection ADAS)
 
 
