@@ -1,13 +1,12 @@
 # DepthPro 기반 Ambiguous Clearance Detection ADAS
 (DepthPro-based Ambiguous Clearance Detection ADAS)
 
----
 
 <p align="center">
-  <img src="MinDistance_Visualization.gif" width="90%">
+  <img src="MinDistance_Visualization.gif" width="100%">
 </p>
 
----
+
 
 ## 🧩 개요 (Overview)
 
@@ -27,6 +26,16 @@ It detects ambiguous clearance regions by combining
 ## 🤓 개발 및 실행 환경 (Development Environment)
 
 이 코드는 **Conda 가상환경**에서 실행하도록 구성되어 있습니다.
+처음 사용하는 사용자는 아래 순서대로 따라 하면 됩니다.
+
+
+
+### 0️⃣ 프로젝트 복제 (Clone Repository)
+
+```bash
+git clone https://github.com/kangminyeong-dev/DepthPro-Ambiguous-Clearance-ADAS.git
+cd DepthPro-Ambiguous-Clearance-ADAS
+```
 
 
 ### 1️⃣ Conda 환경 생성 (Create Conda Environment)
@@ -35,6 +44,7 @@ It detects ambiguous clearance regions by combining
 conda env create -f environment.yml
 conda activate depth-pro
 ```
+
 
 ### 2️⃣ DepthPro 모델 가중치 다운로드 (Download DepthPro Weights)
 
@@ -46,6 +56,7 @@ bash get_pretrained_models.sh
 (본 프로젝트에서는 원본 **Apple DepthPro**의 사전학습 가중치를 그대로 사용합니다.)
 
 
+
 ### 3️⃣ 코드 실행 위치 (Execution Path)
 
 모든 실행은 깃클론한 폴더 내부(`ml-depth-pro`)를 기준으로 수행됩니다.
@@ -54,6 +65,8 @@ bash get_pretrained_models.sh
 ```bash
 python kmy-depthpro-dev/01_depthpro_visualization.py
 ```
+
+---
 
 ## ⚙️ 프로젝트 구조 (Project Structure)
 
@@ -82,15 +95,11 @@ The development sequence (01 → 20) follows the incremental building process of
 
 ## 🧾 실행 예시 (Example Usage)
 
-예시 입력 이미지(`data/test.jpg`)를 기반으로 다음 명령을 실행합니다:
-
 ```bash
 python kmy-depthpro-dev/09_integrated_min_distance_pipeline.py
 ```
+각각 실행하면 01~20 단계까지 모든 결과를 직접적으로 볼 수 있습니다.
 
-결과는 `result/` 폴더에 저장되며, 원본 이미지에 장애물 간 최소 거리가 표시됩니다.
-
----
 
 ## 📊 시각화 결과 (Visualization Results)
 
@@ -118,33 +127,44 @@ python kmy-depthpro-dev/09_integrated_min_distance_pipeline.py
 | Shapely             | 다각형 간 최소 거리 계산 | Geometric distance computation           |
 | Matplotlib / OpenCV | 시각화 도구         | Visualization and rendering              |
 
----
 
 ## 📚 참고 논문 (Citation)
 
-DepthPro 모델의 사전학습 가중치를 사용할 경우, 아래 논문을 인용해주십시오.
+DepthPro 모델의 사전학습 가중치를 사용하는 경우, 아래 논문을 인용하십시오.  
+If you use the pretrained DepthPro weights in your research, please cite the following paper:
 
-Aleksei Bochkovskii et al.,
-*Depth Pro: Sharp Monocular Metric Depth in Less Than a Second*,
-ICLR 2025.
+Aleksei Bochkovskii et al.,  
+*Depth Pro: Sharp Monocular Metric Depth in Less Than a Second*,  
+ICLR 2025.  
 [https://arxiv.org/abs/2410.02073](https://arxiv.org/abs/2410.02073)
 
----
 
-## 👤 연구자 정보 (Author)
+## 🔗 원본 레포지토리 (Original Repository)
 
-**Kang MinYeong (강민영)**
-B.S. Candidate & U.R Intern @ RISE MLM Lab, Ajou University
-AI Robotics / Autonomous Driving Perception & Decision Intelligence
-📍 Suwon, South Korea
+이 프로젝트는 Apple의 **DepthPro** 공식 오픈소스 코드를 기반으로 확장되었습니다.  
+The base implementation is derived from Apple’s official **DepthPro** repository:
 
----
+🔗 https://github.com/apple/ml-depth-pro  
+© Apple, released under the Apple Sample Code License.
+
 
 ## 🪪 라이선스 (License)
 
-이 저장소의 코드는 Apple의 DepthPro 원본 라이선스 조건을 따르며,
-추가 구현된 ADAS 알고리즘은 연구 및 비상업적 용도에 한정됩니다.
+이 저장소의 코드는 Apple의 DepthPro 원본 라이선스 조건을 따르며,  
+추가 구현된 ADAS 알고리즘은 **연구 및 비상업적 용도**에 한정됩니다.  
 
-The original DepthPro license applies to pretrained weights.
-All additional algorithmic implementations in this repository are released
-for research and non-commercial purposes only.
+The original DepthPro license applies to the pretrained model weights.  
+All additional ADAS algorithm implementations in this repository are released  
+for **research and non-commercial use only**.
+
+
+---
+
+## 👤 프로젝트 작성자 (Author)
+
+**Kang MinYeong (강민영)**  
+Undergraduate Student at Ajou University  
+Personal project on AI-based Autonomous Driving and ADAS perception  
+📍 Suwon, South Korea
+
+
