@@ -1,4 +1,4 @@
-# DepthPro 기반 Ambiguous Clearance Detection ADAS
+# DepthPro 기반 Ambiguous Clearance Detection ADAS ( 2025.09 ~ )
 (DepthPro-based Ambiguous Clearance Detection ADAS)
 
 
@@ -164,7 +164,7 @@ for **research and non-commercial use only**.
 
 **Kang MinYeong (강민영)**  
 Undergraduate Student at Ajou University  
-Personal project on AI-based Autonomous Driving and ADAS perception  
+project on AI-based Autonomous Driving and ADAS perception  
 📍 Suwon, South Korea
 
 
