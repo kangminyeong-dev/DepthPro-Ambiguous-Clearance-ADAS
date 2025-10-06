@@ -1,97 +1,150 @@
-## Depth Pro: Sharp Monocular Metric Depth in Less Than a Second
+# DepthPro 기반 Ambiguous Clearance Detection ADAS
+(DepthPro-based Ambiguous Clearance Detection ADAS)
 
-This software project accompanies the research paper:
-**[Depth Pro: Sharp Monocular Metric Depth in Less Than a Second](https://arxiv.org/abs/2410.02073)**, 
-*Aleksei Bochkovskii, Amaël Delaunoy, Hugo Germain, Marcel Santos, Yichao Zhou, Stephan R. Richter, and Vladlen Koltun*.
+---
 
-![](data/depth-pro-teaser.jpg)
+<p align="center">
+  <img src="MinDistance_Visualization.gif" width="90%">
+</p>
 
-We present a foundation model for zero-shot metric monocular depth estimation. Our model, Depth Pro, synthesizes high-resolution depth maps with unparalleled sharpness and high-frequency details. The predictions are metric, with absolute scale, without relying on the availability of metadata such as camera intrinsics. And the model is fast, producing a 2.25-megapixel depth map in 0.3 seconds on a standard GPU. These characteristics are enabled by a number of technical contributions, including an efficient multi-scale vision transformer for dense prediction, a training protocol that combines real and synthetic datasets to achieve high metric accuracy alongside fine boundary tracing, dedicated evaluation metrics for boundary accuracy in estimated depth maps, and state-of-the-art focal length estimation from a single image.
+---
+
+## 🧩 개요 (Overview)
+
+이 프로젝트는 **Apple의 DepthPro 단안(Monocular) 깊이 추정 모델**을 기반으로,
+차량 주변의 **모호한 여유 거리(Ambiguous Clearance)** 상황을 정량적으로 인식하고
+**DBSCAN + Alpha Shape + Shapely Distance**를 통해
+객체 간의 **실제 최소 거리(Metric Minimum Distance)** 를 계산 및 시각화하는
+**ADAS(Advanced Driver Assistance System)** 알고리즘 구현입니다.
+
+This project implements an **Ambiguous Clearance Detection ADAS algorithm**
+based on Apple’s **DepthPro monocular metric depth model**.
+It detects ambiguous clearance regions by combining
+**DBSCAN clustering, Alpha Shape contour extraction, and Shapely-based distance computation.**
+
+---
+
+## 🤓 개발 및 실행 환경 (Development Environment)
+
+이 코드는 **Conda 가상환경**에서 실행하도록 구성되어 있습니다.
 
 
-The model in this repository is a reference implementation, which has been re-trained. Its performance is close to the model reported in the paper but does not match it exactly.
-
-## Getting Started
-
-We recommend setting up a virtual environment. Using e.g. miniconda, the `depth_pro` package can be installed via:
+### 1️⃣ Conda 환경 생성 (Create Conda Environment)
 
 ```bash
-conda create -n depth-pro -y python=3.9
+conda env create -f environment.yml
 conda activate depth-pro
-
-pip install -e .
 ```
 
-To download pretrained checkpoints follow the code snippet below:
+### 2️⃣ DepthPro 모델 가중치 다운로드 (Download DepthPro Weights)
+
 ```bash
-source get_pretrained_models.sh   # Files will be downloaded to `checkpoints` directory.
+bash get_pretrained_models.sh
 ```
 
-### Running from commandline
+→ 실행 시 `checkpoints/` 디렉터리 내부에 모델 가중치가 자동 저장됩니다.
+(본 프로젝트에서는 원본 **Apple DepthPro**의 사전학습 가중치를 그대로 사용합니다.)
 
-We provide a helper script to directly run the model on a single image:
+
+### 3️⃣ 코드 실행 위치 (Execution Path)
+
+모든 실행은 깃클론한 폴더 내부(`ml-depth-pro`)를 기준으로 수행됩니다.
+예를 들어:
+
 ```bash
-# Run prediction on a single image:
-depth-pro-run -i ./data/example.jpg
-# Run `depth-pro-run -h` for available options.
+python kmy-depthpro-dev/01_depthpro_visualization.py
 ```
 
-### Running from python
+## ⚙️ 프로젝트 구조 (Project Structure)
 
-```python
-from PIL import Image
-import depth_pro
-
-# Load model and preprocessing transform
-model, transform = depth_pro.create_model_and_transforms()
-model.eval()
-
-# Load and preprocess an image.
-image, _, f_px = depth_pro.load_rgb(image_path)
-image = transform(image)
-
-# Run inference.
-prediction = model.infer(image, f_px=f_px)
-depth = prediction["depth"]  # Depth in [m].
-focallength_px = prediction["focallength_px"]  # Focal length in pixels.
+```
+ml-depth-pro/
+ ├── kmy-depthpro-dev/        ← 주요 개발 코드 (01~20 단계)
+ │    ├─ 01_depthpro_visualization.py
+ │    ├─ 02_nuscenes_intrinsic_projection.py
+ │    ├─ 03_gpu_inference_projection.py
+ │    ├─ ...
+ │    └─ 20_point_optimize_realtime.py
+ │
+ ├─ result/                   ← 결과 이미지/데이터 저장 폴더
+ ├─ data/                     ← 입력 예시 이미지
+ ├─ environment.yml           ← Conda 환경 설정 파일
+ ├─ get_pretrained_models.sh  ← DepthPro 가중치 다운로드 스크립트
+ ├─ README.md
+ └─ LICENSE
 ```
 
+각 `.py` 파일은 독립적으로 실행 가능하며,
+01 → 20 순서로 단계별로 Depth 기반 ADAS 기능이 확장되도록 설계되어있습니다.
 
-### Evaluation (boundary metrics) 
+Each Python file can be executed independently.
+The development sequence (01 → 20) follows the incremental building process of the ADAS pipeline.
 
-Our boundary metrics can be found under `eval/boundary_metrics.py` and used as follows:
+## 🧾 실행 예시 (Example Usage)
 
-```python
-# for a depth-based dataset
-boundary_f1 = SI_boundary_F1(predicted_depth, target_depth)
+예시 입력 이미지(`data/test.jpg`)를 기반으로 다음 명령을 실행합니다:
 
-# for a mask-based dataset (image matting / segmentation) 
-boundary_recall = SI_boundary_Recall(predicted_depth, target_mask)
+```bash
+python kmy-depthpro-dev/09_integrated_min_distance_pipeline.py
 ```
 
+결과는 `result/` 폴더에 저장되며, 원본 이미지에 장애물 간 최소 거리가 표시됩니다.
 
-## Citation
+---
 
-If you find our work useful, please cite the following paper:
+## 📊 시각화 결과 (Visualization Results)
 
-```bibtex
-@inproceedings{Bochkovskii2024:arxiv,
-  author     = {Aleksei Bochkovskii and Ama\"{e}l Delaunoy and Hugo Germain and Marcel Santos and
-               Yichao Zhou and Stephan R. Richter and Vladlen Koltun},
-  title      = {Depth Pro: Sharp Monocular Metric Depth in Less Than a Second},
-  booktitle  = {International Conference on Learning Representations},
-  year       = {2025},
-  url        = {https://arxiv.org/abs/2410.02073},
-}
-```
+<p align="center">
+  <img src="test_origin.jpg" width="45%"> 
+  <img src="test_depthmap.jpg" width="45%">
+</p>
+<p align="center">
+  <img src="topview_projection.png" width="90%">
+</p>
+<p align="center">
+  <img src="Min_Distance_Real.png" width="45%"> 
+  <img src="Min_Distance_Example.png" width="45%">
+</p>
 
-## License
-This sample code is released under the [LICENSE](LICENSE) terms.
+---
 
-The model weights are released under the [LICENSE](LICENSE) terms.
+## 🧩 핵심 기술 구성 (Core Components)
 
-## Acknowledgements
+| 구성 요소               | 설명 (KOR)       | Description (ENG)                        |
+| ------------------- | -------------- | ---------------------------------------- |
+| DepthPro            | 단안 기반 깊이 예측 모델 | Monocular metric depth estimation        |
+| DBSCAN              | 포인트 클러스터링      | Density-based clustering                 |
+| Alpha Shape         | 외각 다각형 추출 알고리즘 | Boundary extraction for clustered points |
+| Shapely             | 다각형 간 최소 거리 계산 | Geometric distance computation           |
+| Matplotlib / OpenCV | 시각화 도구         | Visualization and rendering              |
 
-Our codebase is built using multiple opensource contributions, please see [Acknowledgements](ACKNOWLEDGEMENTS.md) for more details.
+---
 
-Please check the paper for a complete list of references and datasets used in this work.
+## 📚 참고 논문 (Citation)
+
+DepthPro 모델의 사전학습 가중치를 사용할 경우, 아래 논문을 인용해주십시오.
+
+Aleksei Bochkovskii et al.,
+*Depth Pro: Sharp Monocular Metric Depth in Less Than a Second*,
+ICLR 2025.
+[https://arxiv.org/abs/2410.02073](https://arxiv.org/abs/2410.02073)
+
+---
+
+## 👤 연구자 정보 (Author)
+
+**Kang MinYeong (강민영)**
+B.S. Candidate & U.R Intern @ RISE MLM Lab, Ajou University
+AI Robotics / Autonomous Driving Perception & Decision Intelligence
+📍 Suwon, South Korea
+
+---
+
+## 🪪 라이선스 (License)
+
+이 저장소의 코드는 Apple의 DepthPro 원본 라이선스 조건을 따르며,
+추가 구현된 ADAS 알고리즘은 연구 및 비상업적 용도에 한정됩니다.
+
+The original DepthPro license applies to pretrained weights.
+All additional algorithmic implementations in this repository are released
+for research and non-commercial purposes only.

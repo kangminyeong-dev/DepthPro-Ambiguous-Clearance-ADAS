@@ -1,0 +1,31 @@
+# Python cache and temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+env/
+venv/
+*.env
+
+# Model weights and checkpoints
+checkpoints/
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.onnx
+
+# Results and logs
+result/
+CAM_RESULT/
+logs/
+*.log
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
