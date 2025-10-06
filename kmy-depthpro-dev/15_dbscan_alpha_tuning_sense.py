@@ -31,9 +31,6 @@
 #   DBSCAN 및 Alpha Shape 파라미터 튜닝의 감각을 잡고,
 #   이후 실험(16단계 이상)에서 계량적 조정을 위한 기준을 확립한다.
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / shapely 2.0.4  
-#   작성일: 2025-10-06
 #
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/15_dbscan_alpha_tuning_sense.py

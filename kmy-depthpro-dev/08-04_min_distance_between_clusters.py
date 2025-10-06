@@ -29,7 +29,6 @@
 # 터미널 실행 명령어:
 # python kmy-depthpro-dev/08-04_min_distance_between_clusters.py
 #
-# 2025-09-30 / Python 3.9.23 / FP16 환경 / Spatial Distance Prototype
 
 import numpy as np
 import matplotlib.pyplot as plt

@@ -32,7 +32,6 @@
 # 터미널 실행 명령어:
 # python kmy-depthpro-dev/08_topview_save.py
 #
-# 2025-09-29 / Python 3.9.23 / FP16 GPU 환경 / Top-View Export for Distance Study
 
 from PIL import Image
 import depth_pro

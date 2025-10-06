@@ -25,7 +25,6 @@
 # 터미널 실행 명령어:
 # python kmy-depthpro-dev/08-01_load_and_visualize_topview.py
 #
-# 2025-09-30 / Python 3.9.23 / FP16 환경 / Top-View Verification
 
 import numpy as np
 import matplotlib.pyplot as plt

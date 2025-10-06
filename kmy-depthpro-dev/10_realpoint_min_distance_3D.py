@@ -27,9 +27,6 @@
 #   이 실험은 향후 실제 Clearance Detection 시 
 #   "3D 실거리 기반 판단"의 정확도를 검증하기 위한 준비 단계이다.
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / shapely 2.0.4
-#   작성일: 2025-10-06
 #
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/10_realpoint_min_distance_3D.py

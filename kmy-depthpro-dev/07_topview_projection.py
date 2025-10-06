@@ -22,7 +22,6 @@
 # 터미널 실행 명령어
 # python kmy-depthpro-dev/07_topview_projection.py
 #
-# 2025-09-28 / Python 3.9.23 | FP16 GPU 환경 | Top-View Projection
 
 from PIL import Image
 import depth_pro

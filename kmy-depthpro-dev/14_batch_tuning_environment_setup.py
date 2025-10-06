@@ -23,9 +23,6 @@
 #   - CAM_RESULT 폴더 내에 프레임별 거리 분석 결과 이미지가 생성됨
 #   - 이후 단계(파라미터 튜닝)는 본 환경을 기반으로 진행 예정
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / shapely 2.0.4
-#   작성일: 2025-10-06
 #
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/14_batch_tuning_environment_setup.py

@@ -17,10 +17,6 @@
 #   출력되는 “Real_Min_Distance” 값은 두 다각형의 실제 공간적 최단거리(m)이며,
 #   두 점(pA, pB)은 그 거리의 양 끝점을 나타낸다.
 #
-# 실행 환경:
-#   Python 3.9.23 / Ubuntu 22.04 / shapely 2.0.4 / scikit-learn 1.4.2
-#   작성일: 2025-09-30
-#
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/08-05_real_min_distance_polygon_to_polygon.py
 # ================================================

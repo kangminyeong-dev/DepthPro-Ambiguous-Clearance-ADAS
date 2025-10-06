@@ -27,9 +27,6 @@
 #   - 거리 조건: 1.0~7.0m 사이의 최소 거리만 시각화 (비현실적 거리 제거)
 #   - 클러스터 포인트 수를 시각적으로 표시하여 튜닝 근거 확보
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / shapely 2.0.4
-#   작성일: 2025-10-06
 #
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/16_condition_filtering_cluster_size.py

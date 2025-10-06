@@ -18,10 +18,6 @@
 #   - 이 버전은 08-04~08-06 단계의 핵심 아이디어(Alpha-Shape + nearest_points)
 #     를 실제 DepthPro 출력 포인트에 적용한 첫 통합 예시다.
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / shapely 2.0.4 / scikit-learn 1.5
-#   작성일: 2025-10-06
-#
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/09_integrated_min_distance_pipeline.py
 # ================================================

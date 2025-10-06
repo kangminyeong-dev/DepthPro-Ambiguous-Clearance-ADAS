@@ -40,7 +40,6 @@
 # 터미널 실행 명령어:
 # python kmy-depthpro-dev/08-03_dbscan_alpha_shape_test.py
 #
-# 2025-09-30 / Python 3.9.23 / FP16 환경 / Geometry Shape Extraction
 
 import numpy as np
 import matplotlib.pyplot as plt

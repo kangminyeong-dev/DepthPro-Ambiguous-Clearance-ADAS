@@ -24,10 +24,6 @@
 # 결과:
 #   원본 프레임 위에 두 장애물 간 최소 거리(단위 m)가 녹색 텍스트로 출력된다.
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / shapely 2.0.4
-#   작성일: 2025-10-06
-#
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/12_visualize_real_distance_overlay.py
 # ================================================

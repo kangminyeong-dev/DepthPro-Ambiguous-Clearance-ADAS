@@ -15,9 +15,6 @@
 #   따라서 이번 단계는 ‘가까운 3개 다각형’ + ‘관통 거리선 제거’ 조합으로
 #   결과의 신뢰성과 실시간성(연산량)을 동시에 확보하는 실험이다.
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / shapely 2.0.4  
-#   작성일: 2025-10-06
 #
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/17_select_top3_and_remove_crosslines.py

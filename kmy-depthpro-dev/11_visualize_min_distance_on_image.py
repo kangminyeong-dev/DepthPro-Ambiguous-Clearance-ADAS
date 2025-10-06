@@ -19,9 +19,6 @@
 #   Depth → 3D 변환 → 클러스터링(DBSCAN+Alpha-Shape) → 최소거리 계산
 #   → 최근접점 인덱스 역추적 → 원본 이미지 픽셀 좌표로 매핑 → 시각화
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / shapely 2.0.4
-#   작성일: 2025-10-06
 #
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/11_visualize_min_distance_on_image.py

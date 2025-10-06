@@ -23,10 +23,6 @@
 #       * Lawngreen / Lightgreen / Green (거리 연결선)
 #   - Outline 텍스트로 거리 값의 가독성 강화
 #
-# 실행 환경:
-#   Python 3.9.23 / PyTorch 2.4 / OpenCV 4.9 / Shapely 2.0.4  
-#   작성일: 2025-10-06
-#
 # 터미널 실행 명령어:
 #   python kmy-depthpro-dev/18_visual_refined_final.py
 # ================================================
