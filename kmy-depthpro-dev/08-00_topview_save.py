@@ -30,7 +30,7 @@
 #   이후 단계부터 이 데이터로부터 두 물체 간 최소거리 계산을 어떻게 모델링할지를 집중적으로 고민하게 된다.
 #
 # 터미널 실행 명령어:
-# python kmy-depthpro-dev/08_topview_save.py
+# python kmy-depthpro-dev/08-00_topview_save.py
 #
 
 from PIL import Image
