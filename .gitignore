@@ -18,7 +18,6 @@ checkpoints/
 *.onnx
 
 # Results and logs
-result/
 CAM_RESULT/
 logs/
 *.log
