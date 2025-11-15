@@ -5,14 +5,14 @@
   <img src="visualization_opt.gif" width="100%">
 </p>
 
- **이 시각화는 실제 시연 검증을 위해, 아주대학교 다산관–혜강관 사이 실제 주차장에서 팀원들과 직접 촬영하였습니다.**
- **test_frames1 / test_frames2 폴더의 모든 이미지는 팀원의 휴대폰으로 직접 수집한 데이터셋입니다.**
+**이 시각화는 실제 시연 검증을 위해, 아주대학교 다산관–혜강관 사이 실제 주차장에서 팀원들과 직접 촬영하였습니다.**<br>
+**test_frames1 / test_frames2 폴더의 모든 이미지는 팀원의 휴대폰으로 직접 수집한 데이터셋입니다.**<br><br>
 
- **카메라 내부 파라미터(K)와 왜곡 계수(dist)는 체커보드를 이용해 직접 캘리브레이션했습니다.**
- **위 GIF는 실제 수집한 데이터셋을 기반으로 동작하는 V2 ADAS 파이프라인의 결과입니다.**
+**카메라 내부 파라미터(K)와 왜곡 계수(dist)는 체커보드를 이용해 직접 캘리브레이션했습니다.**<br>
+**위 GIF는 실제 수집한 데이터셋을 기반으로 동작하는 V2 ADAS 파이프라인의 결과입니다.**<br><br>
 
-**This visualization is generated from real-world data captured by our team at Ajou University.**
- **Camera intrinsic parameters and distortion coefficients were calibrated by ourselves using a checkerboard.**
+**This visualization is generated from real-world data captured by our team at Ajou University.**<br>
+**Camera intrinsic parameters and distortion coefficients were calibrated by ourselves using a checkerboard.**<br>
 
 
 📸 Visualization Results (V2)
