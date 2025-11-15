@@ -19,7 +19,7 @@ from hydra.core.global_hydra import GlobalHydra
 from hydra import initialize_config_dir
 
 # ======================================================
-# 입력 이미지 한 장 (test_frames1/01.png만 디버깅)
+# 입력 이미지 한 장
 # ======================================================
 img_path = "test_frames1/01.png"
 print(f"[DEBUG] 입력 이미지: {img_path}")
