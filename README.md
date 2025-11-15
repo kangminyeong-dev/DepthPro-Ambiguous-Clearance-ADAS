@@ -1,4 +1,4 @@
-# DepthPro 기반 Ambiguous Clearance Detection ADAS V2 (2025.09 ~ ing)
+# Ambiguous Clearance Detection ADAS V2 (2025.09 ~ ing)
 (DepthPro-based Ambiguous Clearance Detection ADAS V2)
 
 <p align="center">
@@ -125,14 +125,14 @@ DepthPro-Ambiguous-Clearance-ADAS/
  ├── test_frames2/             
  ├── checkpoints/              
  │
- ├── debug01.py
+ ├── debug01.py 개발 및 디버깅 과정 01~06
  ├── debug02.py
  ├── debug03.py
  ├── debug04.py
  ├── debug05.py
  ├── debug06.py
  │
- ├── main.py
+ ├── main.py 최종 완성 코드
  ├── environment.yml
  ├── visualization_opt.gif
  ├── image1.png ~ image7.png 디버깅 이미지
@@ -214,7 +214,7 @@ https://github.com/facebookresearch/sam2
 
 ---
 
-## 👥 Project Team (프로젝트 팀 소개
+## 👥 Project Team (프로젝트 팀 소개)
 
 This project is developed by Team Tayo, participating in the
 2025 Google–Ajou University AI Convergence Capstone Design Competition.
@@ -226,28 +226,28 @@ This project is developed by Team Tayo, participating in the
 • 김유진 (Kim Yoojin)
 Major: Software Engineering (소프트웨어학과)
 Level: Undergraduate 3rd year (학부 3학년)
-Email: kyj040321ajou.ac.kr
+Email: kyj040321@ajou.ac.kr
 
 
 • 고민준 (Ko Minjoon)
 Major: Defense Digital Convergence (국방디지털융합학과)
 Level: Undergraduate 3rd year (학부 3학년)
-Email: rhalwns033ajou.ac.kr
+Email: rhalwns0303@ajou.ac.kr
 
 
 • 강민영 (Kang MinYeong)
 Major: Future Mobility Engineering (미래모빌리티공학과)
 Level: Undergraduate 3rd year (학부 3학년)
-Email: sonic0411ajou.ac.kr
+Email: sonic0411@ajou.ac.kr
 
 
 • 송효정 (Song Hyojung)
 Major: Future Mobility Engineering (미래모빌리티공학과)
 Level: Undergraduate 3rd year (학부 3학년)
-Email: hepkdajou.ac.kr
+Email: hepkd@ajou.ac.kr
 
 
 • 윤우영 (Yoon Wooyoung)
 Major: Artificial Intelligence (인공지능학과)
 Level: Graduate student (대학원 석사)
-Email: woodolly17ajou.ac.kr
+Email: woodolly17@ajou.ac.kr
