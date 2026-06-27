@@ -1,4 +1,4 @@
-# Ambiguous Clearance Detection ADAS V2 (2025.09 ~ ing)
+# Ambiguous Clearance Detection ADAS V2 (2025.09 ~ 2025.12)
 (DepthPro-based Ambiguous Clearance Detection ADAS V2)
 
 <p align="center">
@@ -211,3 +211,15 @@ https://github.com/facebookresearch/sam2
 
 이 프로젝트는 Apple DepthPro 및 Meta SAM2 라이선스를 존중하며,  
 추가 구현된 ADAS 파이프라인은 **연구 및 비상업적 용도**를 기준으로 한다.
+
+---
+
+## 🧑‍💻 기여자 (Contributors)
+
+| 이름  | 학과        | 메일                                                      |
+| --- | --------- | --------------------------------------------------------- |
+| 김유진 | 소프트웨어학과   | [kyj040321@ajou.ac.kr](mailto:kyj040321@ajou.ac.kr)       |
+| 고민준 | 국방디지털융합학과 | [rhalswns0303@ajou.ac.kr](mailto:rhalswns0303@ajou.ac.kr) |
+| 강민영 | 미래모빌리티공학과 | [sonic0411@ajou.ac.kr](mailto:sonic0411@ajou.ac.kr)       |
+| 송효정 | 미래모빌리티공학과 | [hepkd@ajou.ac.kr](mailto:hepkd@ajou.ac.kr)               |
+| 윤우영 | 인공지능학과    | [woodolly17@ajou.ac.kr](mailto:woodolly17@ajou.ac.kr)     |
