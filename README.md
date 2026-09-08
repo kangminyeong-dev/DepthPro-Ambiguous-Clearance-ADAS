@@ -218,8 +218,9 @@ https://github.com/facebookresearch/sam2
 
 | 이름  | 학과        | 메일                                                      |
 | --- | --------- | --------------------------------------------------------- |
+| 윤우영 | 인공지능학과    | [woodolly17@ajou.ac.kr](mailto:woodolly17@ajou.ac.kr)     |
 | 김유진 | 소프트웨어학과   | [kyj040321@ajou.ac.kr](mailto:kyj040321@ajou.ac.kr)       |
 | 고민준 | 국방디지털융합학과 | [rhalswns0303@ajou.ac.kr](mailto:rhalswns0303@ajou.ac.kr) |
 | 강민영 | 미래모빌리티공학과 | [sonic0411@ajou.ac.kr](mailto:sonic0411@ajou.ac.kr)       |
 | 송효정 | 미래모빌리티공학과 | [hepkd@ajou.ac.kr](mailto:hepkd@ajou.ac.kr)               |
-| 윤우영 | 인공지능학과    | [woodolly17@ajou.ac.kr](mailto:woodolly17@ajou.ac.kr)     |
+
